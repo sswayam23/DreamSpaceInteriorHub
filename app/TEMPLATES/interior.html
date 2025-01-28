@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Space Interio Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/interior.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="Dream Space Interio Hub">
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="section-border">
+                <h1 class="title">DESIGNS FOR ROYALTY</h1>
+                <div class="divider"></div>
+                <h2 class="subtitle">Our Top Notch Services Include</h2>
+                <p class="text">Dream space interio hub to inspire, design, and deliver exceptional interior spaces that exceed client expectations, blending creativity, functionality, and innovation in every project</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='assets/images/interior1.jpg') }}" alt="Interior Design">
+            </div>
+            <div class="download-btn-container">
+                <a href="#" class="download-btn">DOWNLOAD A BROCHURE</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-border">
+                <h2 class="subtitle">About Us</h2>
+                <p class="text">Dream Space Interio Hub is an emerging Civil Interior solution company, Specializing in transforming space into breathtaking realities. Our team of young, enthusiastic, and skilled professionals, comprising expert civil engineer work in tandem to deliver top notch interior services, ensuring Seamless execution from concept to completion.</p>
+                
+                <div class="contact-info">
+                    <h3>Call At</h3>
+                    <div class="phone">+91 8617158847</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-border">
+                <h2 class="subtitle">Location</h2>
+                <p class="text">Faizullah Khan, Khan Chowk, PO – Lalbagh<br>Darbhanga, 846004, BIHAR</p>
+
+                <div class="time-slot">
+                    <h3>Lunch Time</h3>
+                    <p>Monday to Sunday<br>10.00 am - 2.30pm</p>
+                </div>
+
+                <div class="time-slot">
+                    <h3>Dinner Time</h3>
+                    <p>Monday to Sunday<br>05.00 pm - 10.00pm</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-border">
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Your email">
+                    <button class="subscribe-btn">SUBSCRIBE</button>
+                </div>
+            </div>
+        </section>
+
+        <nav class="footer-nav">
+            <a href="#">HOME</a>
+            <a href="#">MISSION</a>
+            <a href="#">ABOUT US</a>
+            <a href="#">SERVICES</a>
+            <a href="#">GALLERY</a>
+            <a href="#">CONTACT</a>
+            <a href="#">FACEBOOK</a>
+            <a href="#">INSTAGRAM</a>
+            <a href="#">TWITTER</a>
+            <a href="#">GOOGLE MAP</a>
+        </nav>
+    </main>
+
+    <div class="back-to-top">↑</div>
+
+    <script>
+        document.querySelector('.back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent background image from causing scrollbars */
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/footer-bg.jpg"); /* Replace 'background-image.jpg' with your image file */
+  background-size: cover;
+  /* filter: blur(10px); Adjust the blur effect as needed */
+}
+
+.welcome-message {
+  padding-right: 2rem;
+  margin-right: 3rem;
+  margin-top: 4rem;
+  position: absolute;
+  top: 50px; /* Adjust the distance from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Ensure the message appears above the background */
+  color: #fff; /* Change text color to be visible against background */
+  text-align: center;
+}
+
+.login-container {
+  position: relative; /* Ensure login form remains in front of background */
+  z-index: 2; /* Ensure the form appears above the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(
+    100vh - 50px
+  ); /* Adjust height to accommodate the welcome message */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  margin-right: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.gallery-slider {
+  overflow: hidden;
+  width: 80%;
+}
+
+.gallery-items {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item {
+  min-width: calc(100% / 3); /* Show 3 images at a time */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.gallery-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.gallery-btn.prev {
+  position: absolute;
+  left: 10px;
+}
+
+.gallery-btn.next {
+  position: absolute;
+  right: 10px;
+}

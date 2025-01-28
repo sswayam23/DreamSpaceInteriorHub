@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="../static/assets/css/loginstyles.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDa8Hc12wdCC5PBXHb7lOaYcS6yy_WPAAM",
+      authDomain: "grill-in.firebaseapp.com",
+      projectId: "grill-in",
+      storageBucket: "grill-in.appspot.com",
+      messagingSenderId: "625715020334",
+      appId: "1:625715020334:web:f381ae256bc938cdac15bf",
+      measurementId: "G-1SL11W4J5C"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="welcome-message">
+    <img src="../static/assets/images/logo.svg" alt="Logo" />
+  </div>
+  <div class="login-container">
+    <form class="login-form" id="loginForm" action="/" method="POST">
+      <h2>Login</h2>
+      <div class="input-group">
+        Country Code: <input type="tel" id="countryCode" name="countryCode" placeholder="+91" required/>
+        Phone Number: <input type="tel" id="mobile" name="mobile" placeholder="9366545819" required/>
+      </div>
+      <div id="recaptcha-container"></div> <!-- reCAPTCHA container -->
+      <button type="button" id="login-button">Login</button>
+
+      <div class="input-group" id="otpGroup" style="display: none">
+        <label for="OTP">OTP</label>
+        <input type="number" id="OTP" name="OTP" required />
+      </div>
+      <button type="button" id="verifyOtp" style="display: none">Verify OTP</button>
+    </form>
+  </div>
+  <script src="../static/assets/js/index.js"></script>
+</body>
+</html>

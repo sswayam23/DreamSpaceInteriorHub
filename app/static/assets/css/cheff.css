@@ -1,0 +1,136 @@
+body {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    background-color: #0c0c0c;
+    /* background-image: linear-gradient(to right, transparent 0%, #fff6 100%);
+  transform: skewX(-0.08turn) translateX(-180%); */
+}
+
+
+    
+  
+.container5{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cheff-box {
+
+    width: 315px;
+    /* Set the desired width */
+    height: 472px;
+    /* Set the desired height */
+    border-radius: 8px;
+    border-color: #7a8384;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    justify-content: space-between;
+}
+
+.cheff-box:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    text-align: center;
+    font: inherit;
+    color: #ffffff;
+    font: 44.68px Forum, cursive;
+}
+
+.cheff-box h3 {
+    color: #d7b87b;
+    font-size: 2rem;
+    font: 21px forum, cursive;
+    text-align: center;
+    border-right-width: 50px;
+}
+
+.cheff-box p {
+    font: 14px "Times New Roman";
+    font-style: unset;
+    white-space: 1;
+    text-align: justify;
+
+}
+
+.cheff-image {
+    width: 185px;
+    max-width: fit-content;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 5%;
+    /* font-size: 2rem; */
+    align-self: center;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+}
+
+@media (max-width: 576px) {
+    /* Styles for screens up to 576px wide (typically mobile screens) */
+}
+
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.gallery-slider {
+  overflow: hidden;
+  width: 80%;
+}
+
+.gallery-items {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item {
+  min-width: calc(100% / 3); /* Show 3 images at a time */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.gallery-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.gallery-btn.prev {
+  position: absolute;
+  left: 10px;
+}
+
+.gallery-btn.next {
+  position: absolute;
+  right: 10px;
+}

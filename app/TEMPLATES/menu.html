@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grill Food Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/assets/css/menustyle.css">
+</head>
+<body>
+<div class="menu">
+<div class="heading">
+<h1>DREAMSPACE</h1>
+<h3>&mdash; MENU &mdash;</h3>
+</div>
+<div class="food-items">
+<img src="assets/images/menu-1.png" alt="food">
+<div class="details">
+<div class="details-sub">
+<h5>Salmon dish</h5>
+<h5 class="price">Rs 350</h5>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+dolore ducimus incidunt s?
+</p>
+<div class="menu-item" data-item-id="1">
+<div class="counter-container">
+<div class="counter-btn" onclick="decrement(1)">-</div>
+<div class="counter-value" id="orderCount1">0</div>
+<div class="counter-btn" onclick="increment(1)">+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="food-items">
+<img src="assets/images/menu-2.png" alt="food">
+<div class="details">
+<div class="details-sub">
+<h5>Mixed Noodles</h5>
+<h5 class="price">Rs 350</h5>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+dolore ducimus incidunt s?
+</p>
+<div class="menu-item" data-item-id="2">
+<div class="counter-container">
+<div class="counter-btn" onclick="decrement(2)">-</div>
+<div class="counter-value" id="orderCount2">0</div>
+<div class="counter-btn" onclick="increment(2)">+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="food-items">
+<img src="assets/images/menu-3.png" alt="food">
+<div class="details">
+<div class="details-sub">
+<h5>Chicken Biriyani</h5>
+<h5 class="price">Rs 350</h5>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+dolore ducimus incidunt s?
+</p>
+<div class="menu-item" data-item-id="3">
+<div class="counter-container">
+<div class="counter-btn" onclick="decrement(3)">-</div>
+<div class="counter-value" id="orderCount3">0</div>
+<div class="counter-btn" onclick="increment(3)">+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="food-items">
+<img src="assets/images/menu-4.png" alt="food">
+<div class="details">
+<div class="details-sub">
+<h5>Palak Paneer</h5>
+<h5 class="price">Rs 450</h5>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+dolore ducimus incidunt s?
+</p>
+<div class="menu-item" data-item-id="4">
+<div class="counter-container">
+<div class="counter-btn" onclick="decrement(4)">-</div>
+<div class="counter-value" id="orderCount4">0</div>
+<div class="counter-btn" onclick="increment(4)">+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="food-items">
+<img src="assets/images/menu-5.png" alt="food">
+<div class="details">
+<div class="details-sub">
+<h5>WIF</h5>
+<h5 class="price">Rs 350</h5>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+dolore ducimus incidunt s?
+</p>
+<div class="menu-item" data-item-id="5">
+<div class="counter-container">
+<div class="counter-btn" onclick="decrement(5)">-</div>
+<div class="counter-value" id="orderCount5">0</div>
+<div class="counter-btn" onclick="increment(5)">+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="food-items">
+<img src="assets/images/menu-6.png" alt="food">
+<div class="details">
+<div class="details-sub">
+<h5>Arabiata Bowl</h5>
+<h5 class="price">Rs 350</h5>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+dolore ducimus incidunt s?
+</p>
+<div class="menu-item" data-item-id="6">
+<div class="counter-container">
+<div class="counter-btn" onclick="decrement(6)">-</div>
+<div class="counter-value" id="orderCount6">0</div>
+<div class="counter-btn" onclick="increment(6)">+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="details" id="submit_button">
+  <a class="button_len" href="{{ url_for('main.invoice') }}" onclick="goToCart()">Go to Cart</a>
+</div>
+
+<script>
+let cart = {};
+
+function increment(itemId) {
+  const countElement = document.getElementById(`orderCount${itemId}`);
+  let count = parseInt(countElement.innerText);
+  count += 1;
+  countElement.innerText = count;
+  updateCart(itemId, count);
+}
+
+function decrement(itemId) {
+  const countElement = document.getElementById(`orderCount${itemId}`);
+  let count = parseInt(countElement.innerText);
+  if (count > 0) {
+    count -= 1;
+    countElement.innerText = count;
+    updateCart(itemId, count);
+  }
+}
+
+function updateCart(itemId, count) {
+  if (count > 0) {
+    cart[itemId] = count;
+  } else {
+    delete cart[itemId];
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Calculate total bill amount and store in cookie
+  let totalBillAmount = calculateTotalBillAmount();
+  setCookie('totalBillAmount', totalBillAmount, 1); // Expires in 1 day
+}
+
+function calculateTotalBillAmount() {
+  let total = 0;
+  Object.keys(cart).forEach(itemId => {
+    const itemPrice = getItemPrice(itemId);
+    total += itemPrice * cart[itemId];
+  });
+  return total;
+}
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function goToCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function getItemPrice(itemId) {
+  // Define the price for each item here
+  const itemPrices = {
+    1: 350, // Salmon dish
+    2: 350, // Mixed Noodles
+    3: 350, // Chicken Biriyani
+    4: 450, // Palak Paneer
+    5: 350, // WIF
+    6: 350, // Arabiata Bowl
+  };
+  return itemPrices[itemId] || 0; // Default to 0 if price not found
+}
+</script>
+</body>
+</html>

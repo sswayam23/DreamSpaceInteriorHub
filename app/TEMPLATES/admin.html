@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="..\static\assets\css\admin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="moving-text">
+            <h1 class="my-4">Admin Dashboard</h1>
+        </div>
+        
+        <!-- Add Food Form -->
+        <div class="card mb-4">
+            <div class="card-header">Add Food Item</div>
+            <div class="card-body">
+                <form id="addFoodForm">
+                    <div class="form-group">
+                        <label for="foodName">Food Name</label>
+                        <input type="text" class="form-control" id="foodName" placeholder="Enter food name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foodImage">Food Image URL</label>
+                        <input type="url" class="form-control" id="foodImage" placeholder="Enter image URL" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foodPrice">Price</label>
+                        <input type="number" class="form-control" id="foodPrice" placeholder="Enter price" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Food</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Food Menu -->
+        <div class="card">
+            <div class="card-header">Food Menu</div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="foodMenu">
+                        <!-- Food items will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../static/assets/js/admin.js"></script>
+</body>
+</html>

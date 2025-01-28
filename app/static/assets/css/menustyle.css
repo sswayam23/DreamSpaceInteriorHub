@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(242, 242, 243);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+.menu {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.heading {
+  background-color: rgb(232, 172, 92);
+  background-image: url("../images/about-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  color: aliceblue;
+  margin: 0 0 30px 0;
+  padding: 20px 15px;
+  grid-column: 1/-1;
+  text-align: center;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+.heading > h1 {
+  font-weight: 400;
+  font-size: clamp(32px, 8vw, 80px);
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+.heading > h3 {
+  font-weight: 600;
+  font-size: clamp(16px, 3vw, 22px);
+  letter-spacing: 3px;
+}
+.food-items {
+  display: grid;
+  position: relative;
+  grid-template-rows: auto 1fr;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background: white;
+  overflow: hidden;
+}
+.food_items img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+h1 {
+  grid-column: 1/-1;
+  text-align: center;
+}
+.details {
+  padding: 20px 15px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 15px;
+}
+.details-sub {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+.details-sub > h5 {
+  font-weight: 600;
+  font-size: clamp(16px, 2.5vw, 18px);
+}
+.price {
+  text-align: right;
+  font-weight: bold;
+  color: rgb(232, 172, 92);
+}
+.details > p {
+  color: rgb(0, 9, 16);
+  font-size: clamp(14px, 2vw, 15px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+.details > button,
+a {
+  background-color: rgb(232, 172, 92);
+  border: none;
+  color: aliceblue;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 600;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 180px;
+  padding: 10px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+
+svg {
+  width: 30px;
+  align-items: right;
+}
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.counter-btn {
+  cursor: pointer;
+  padding: 8px 16px;
+  border: none;
+  color: aliceblue;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: rgb(232, 172, 92);
+  min-width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit_button {
+  width: 100%;
+  max-width: 200px;
+  margin: 15px auto;
+  padding: 12px;
+  height: 44px;
+}
+
+.button_len {
+  width: 100%;
+  max-width: 200px;
+  margin: 10px auto;
+  padding: 12px;
+  height: 44px;
+}
+
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 20px 0;
+  padding: 0 10px;
+}
+
+.gallery-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.gallery-items {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  gap: 15px;
+}
+
+.gallery-item {
+  min-width: calc(100% / 3);
+  padding: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.gallery-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.gallery-btn.prev {
+  position: absolute;
+  left: 10px;
+}
+
+.gallery-btn.next {
+  position: absolute;
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    padding: 0 10px 20px;
+    grid-template-columns: 1fr;
+  }
+  
+  .heading {
+    padding: 15px;
+  }
+  
+  .details > button,
+  a {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .counter-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .counter-btn {
+    width: 100%;
+    max-width: none;
+  }
+
+  #submit_button,
+  .button_len {
+    width: 100%;
+    max-width: none;
+  }
+
+  .food-items {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    padding: 0 10px 15px;
+  }
+  
+  .heading {
+    padding: 10px;
+  }
+  
+  .details {
+    padding: 12px;
+  }
+  
+  .food_items img {
+    height: 160px;
+  }
+
+  .gallery-wrapper {
+    padding: 0 5px;
+  }
+
+  .gallery-item {
+    padding: 5px;
+  }
+}
